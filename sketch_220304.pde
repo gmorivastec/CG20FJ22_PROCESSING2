@@ -1,5 +1,6 @@
 // isolating transformations
 // hierarchical transformations
+float rotation = 0;
 
 void setup() {
   size(800, 800, P3D);
@@ -42,9 +43,41 @@ void draw() {
   box(100);
   
   popMatrix();
+  
+  // THE SOLAR SYSTEM
+  // hierarchical transformations
+  // hierarchy - relationship between objects
+  
+  pushMatrix(); 
   // each time we pop matrix 
   // we retrieve the last pushed matrix and restore it as our state matrix
   
   translate(width/2 + 100, height/2 - 100, 0);
+  rotateY(rotation);
   sphere(100);
+  
+  // if you have several planets you must isolate each one
+  pushMatrix();  
+  translate(150, 0, 0);
+  sphere(30);  
+  
+  // a satelite!
+  pushMatrix();
+  rotateY(rotation);
+  translate(60, 0, 0);
+  sphere(10);
+  popMatrix();
+  
+  popMatrix();
+  
+  pushMatrix();
+  translate (0, 150, 0);
+  sphere(20);
+  popMatrix();
+  
+  popMatrix();
+  
+  box(100);
+  
+  rotation += 0.01f;
 }
