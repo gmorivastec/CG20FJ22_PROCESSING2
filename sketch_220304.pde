@@ -74,6 +74,32 @@ void homeworkCheck() {
   
   popMatrix();  
   // base finger 1
+  
+  // base finger 2
+  pushMatrix();
+  
+  // put it in place
+  translate(50, -100);
+    
+  rotateX(rotationBase2);
+  translate(0, -50);
+  
+  pushMatrix();
+  scale(0.3f, 1, 1);
+  box(100);
+  popMatrix();
+    
+  // we will put the code for the tip here
+  pushMatrix();
+  translate(0, -50, 0);
+  rotateX(rotationTip2);
+  translate(0, -50, 0);
+  scale(0.3f, 1, 1);
+  box(100);
+  popMatrix();
+  
+  popMatrix();  
+  // base finger 2
 }
 
 void classNotes() {
